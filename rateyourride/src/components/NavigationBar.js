@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useUser } from './UserContext'; // Import the useUser hook
 
 const NavigationBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
-  const [loggedInUser, setLoggedInUser] = useState(null);
+  const { loggedInUser, setLoggedInUser } = useUser(); // Use the useUser hook
 
   const handleSearch = () => {
-      navigate(`/search/${searchTerm}`);
+    navigate(`/search/${searchTerm}`);
   };
 
-  const handleLogin = (username) => {
-    setLoggedInUser(username);
+  const handleLogout = () => {
+    setLoggedInUser(null);
   };
 
   return (
@@ -27,8 +28,16 @@ const NavigationBar = () => {
         <button onClick={handleSearch}>Search</button>
       </div>
       <div className="login-signup">
-        <button>Login</button>
-        <button><Link to="/signup">Sign Up</Link></button>
+        {loggedInUser ? (
+          <button onClick={handleLogout}>Sign Out</button>
+        ) : (
+          <Link to="/login">
+            <button>Login</button>
+          </Link>
+        )}
+        {!loggedInUser && (
+          <button><Link to="/signup">Sign Up</Link></button>
+        )}
       </div>
     </div>
   );

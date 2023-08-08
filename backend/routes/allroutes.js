@@ -126,5 +126,61 @@ router.route("/search/").get((req, res) => {
       .catch((err) => res.status(400).json("Error: " + err));
 })
 
+//adding review
+router.route("/addreview").post((req, res) => {
+
+  function checkVariablesRange(variables) {
+    variables.forEach(variable => {
+      if (variable < 1 || variable > 10) {
+        throw new Error(`Variable ${variable} is not between 1 and 10`);
+      }
+    });
+  }
+  
+  const username = req.body.username;
+  const Make= req.body.Make;
+  const Model= req.body.Model;
+  const Year= req.body.Year;
+  const engine= req.body.engine;
+  const chassis= req.body.chassis;
+  const aesthetics= req.body.aesthetics;
+  const comfort= req.body.comfort;
+  const fuel_efficiency = req.body["fuel efficiency"];
+  const reliability = req.body.reliability;
+  const overall= req.body.overall;
+  const comment= req.body.comment
+  
+  try {
+    checkVariablesRange([engine,chassis,aesthetics,comfort,fuel_efficiency,reliability,overall]);
+    console.log('All ratings are within range.');
+    const newReview = new Review({
+      username,
+      Make,
+      Model,
+      Year,
+      engine,
+      chassis,
+      aesthetics,
+      comfort,
+      "fuel efficieny": fuel_efficiency,
+      reliability,
+      overall,
+      comment
+    });
+  
+    console.log("checkpoint");
+  
+    newReview
+      .save()
+      .then(() => res.json("Review added!"))
+      .catch((err) => res.status(400).json("Error: " + err));
+    
+  } catch (error) {
+    console.error(error.message);
+  }
+
+
+});
+
 
 module.exports = router;

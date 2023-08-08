@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const CarDetails = () => {
+  const [reviews, setReviews] = useState([]);
   const { make, model, year } = useParams();
   const [carImage, setCarImage] = useState('/images/notfound.png');
   const [carDetails, setCarDetails] = useState({});
@@ -42,7 +43,15 @@ const CarDetails = () => {
       })
       .catch(error => {
         console.error('Error fetching average ratings:', error);
-      });
+    });
+
+    axios.get(`http://localhost:5000/getallreview/${make}&${model}&${year}`)
+     .then(response => {
+      setReviews(response.data);
+      })
+      .catch(error => {
+          console.error('Error fetching reviews:', error);
+    });
 
     const imageSrc = `/images/${make}_${model}_${year}.jpg`;
     axios.head(imageSrc)
@@ -86,6 +95,17 @@ const CarDetails = () => {
           <li>Overall: {averageRatings.Overall || 0}</li>
         </ul>
       </div>
+      <div className="user-reviews">
+        <h3>User Reviews:</h3>
+        <ul>
+          {reviews.map((review, index) => (
+          <li key={index}>
+            <strong>{review.username}:</strong> {review.comment}
+          </li>
+          ))}
+        </ul>
+      </div>
+
     </div>
   );
 };
