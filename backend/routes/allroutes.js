@@ -145,7 +145,7 @@ router.route("/addreview").post((req, res) => {
   const chassis= req.body.chassis;
   const aesthetics= req.body.aesthetics;
   const comfort= req.body.comfort;
-  const fuel_efficiency = req.body["fuel efficiency"];
+  const fuel_efficiency = req.body.fuel_efficiency;
   const reliability = req.body.reliability;
   const overall= req.body.overall;
   const comment= req.body.comment
@@ -162,7 +162,7 @@ router.route("/addreview").post((req, res) => {
       chassis,
       aesthetics,
       comfort,
-      "fuel efficieny": fuel_efficiency,
+      "fuel efficiency": fuel_efficiency,
       reliability,
       overall,
       comment
@@ -173,10 +173,9 @@ router.route("/addreview").post((req, res) => {
     newReview
       .save()
       .then(() => res.json("Review added!"))
-      .catch((err) => res.status(400).json("Error: " + err));
     
   } catch (error) {
-    console.error(error.message);
+    res.status(400).json("Error: " + error);
   }
 
 

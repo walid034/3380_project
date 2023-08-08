@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import PostReview from './PostReview';
+
+import { useUser } from './UserContext';
 
 const CarDetails = () => {
   const [reviews, setReviews] = useState([]);
@@ -16,6 +19,8 @@ const CarDetails = () => {
     Reliability: 0,
     Overall: 0,
   });
+
+  const { loggedInUser } = useUser();
 
   useEffect(() => {
     // Fetch car details
@@ -105,6 +110,9 @@ const CarDetails = () => {
           ))}
         </ul>
       </div>
+      {loggedInUser && (
+        <PostReview make={make} model={model} year={year} username={loggedInUser} />
+      )}
 
     </div>
   );
