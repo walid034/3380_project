@@ -1,0 +1,150 @@
+/* NavigationBar.css */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+
+.app-name {
+  color: yellow; /* Set the text color to yellow */
+  text-decoration: none; /* Remove underline */
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.search-bar input {
+  border: none;
+  padding: 5px;
+}
+
+.search-bar button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.login-signup button  {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.login-signup a {
+  text-decoration: none;
+  color: white;
+}
+
+.login-signup button + button {
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+/* CarCard.css */
+.car-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 300px;
+  margin: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.car-image img {
+  width: 250px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.car-details h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.car-details p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.home {
+  padding: 20px;
+  text-align: center;
+}
+
+.car-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.car-card-link {
+  text-decoration: none; /* Remove underlines for the link */
+}
+
+.car-card:hover {
+  transform: scale(1.05);
+}
+
+.car-details {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.car-details h3 {
+  margin: 0;
+  font-size: 18px;
+  color: black; /* Set text color to black */
+}
+
+.car-details p {
+  margin: 0;
+  font-size: 14px;
+  color: black; /* Set text color to black */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  border: 1px solid #ccc;
+  background-color: #fff9e5; 
+  color: #333;
+  padding: 5px 10px;
+  margin: 0 2px; 
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.pagination button:hover {
+  background-color: #ffecc0; 
+  transform: scale(1.05);
+}
+
+.pagination button.active {
+  background-color: #ffecc0; /* Highlighted background color for active page */
+}
