@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Import Link
-import './App.css'; // You can style your CarCard using CSS
+import { Link } from 'react-router-dom'; 
+import './App.css'; 
 import axios from 'axios';
 
 const CarCard = ({ make, model, year }) => {
@@ -9,7 +9,7 @@ const CarCard = ({ make, model, year }) => {
 
   useEffect(() => {
     // Fetch average overall rating for the car
-    axios.get(`http://localhost:5000/getavgreview/${make}&${model}&${year}`)
+    axios.get(`https://ryc-backend.onrender.com/getavgreview/${make}&${model}&${year}`)
       .then(response => {
         const avgOverall = response.data[0]?.Overall || 0;
         setAverageRating(avgOverall);

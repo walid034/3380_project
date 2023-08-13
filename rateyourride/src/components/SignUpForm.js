@@ -7,7 +7,7 @@ const SignUpForm = () => {
   const [password, setPassword] = useState('');
 
   const handleSignUp = () => {
-    axios.get(`http://localhost:5000/checkuser/${username}`)
+    axios.get(`https://ryc-backend.onrender.com/checkuser/${username}`)
       .then(response => {
         if (response.data.length >= 1) {
           alert('Username already exists.');
@@ -17,7 +17,7 @@ const SignUpForm = () => {
             return;
           }
 
-          axios.post('http://localhost:5000/adduser', { username, password })
+          axios.post('https://ryc-backend.onrender.com/adduser', { username, password })
             .then(response => {
               console.log(response.data);
               setUsername('');

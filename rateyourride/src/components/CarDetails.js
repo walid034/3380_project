@@ -24,7 +24,7 @@ const CarDetails = () => {
 
   useEffect(() => {
     // Fetch car details
-    axios.get(`http://localhost:5000/getcardetails/${make}&${model}&${year}`)
+    axios.get(`https://ryc-backend.onrender.com/getcardetails/${make}&${model}&${year}`)
       .then(response => {
         setCarDetails(response.data[0]);
       })
@@ -33,7 +33,7 @@ const CarDetails = () => {
       });
 
     // Fetch average ratings
-    axios.get(`http://localhost:5000/getavgreview/${make}&${model}&${year}`)
+    axios.get(`https://ryc-backend.onrender.com/getavgreview/${make}&${model}&${year}`)
       .then(response => {
         const avgRatings = response.data[0] || {}; // Use an empty object if the response is empty
         setAverageRatings({
@@ -50,7 +50,7 @@ const CarDetails = () => {
         console.error('Error fetching average ratings:', error);
     });
 
-    axios.get(`http://localhost:5000/getallreview/${make}&${model}&${year}`)
+    axios.get(`https://ryc-backend.onrender.com/getallreview/${make}&${model}&${year}`)
      .then(response => {
       setReviews(response.data);
       })

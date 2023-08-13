@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './App.css'; // You can style your Home component using CSS
-import CarCard from './CarCard'; // Import the CarCard component
+import './App.css'; 
+import CarCard from './CarCard'; 
 import axios from 'axios';
 
 const Home = () => {
@@ -8,7 +8,7 @@ const Home = () => {
 
   useEffect(() => {
     // Fetch top 7 reviewed cars
-    axios.get('http://localhost:5000/gettopcars')
+    axios.get('https://ryc-backend.onrender.com/gettopcars')
       .then(response => {
         setTopCars(response.data);
       })

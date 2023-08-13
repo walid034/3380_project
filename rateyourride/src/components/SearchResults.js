@@ -14,7 +14,7 @@ const SearchResults = () => {
     const fetchSearchResults = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/search/${encodeURIComponent(sentence || '')}`
+          `https://ryc-backend.onrender.com/search/${encodeURIComponent(sentence || '')}`
         );
         setSearchResults(response.data);
         setCurrentPage(1); // Reset to first page when search results change

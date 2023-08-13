@@ -29,10 +29,9 @@ const PostReview = ({ make, model, year, username }) => {
       comment
     };
 
-    axios.post('http://localhost:5000/addreview', reviewData)
+    axios.post('https://ryc-backend.onrender.com/addreview', reviewData)
       .then((response) => {
         console.log(response.data);
-        // Clear form fields after successful submission
         setEngine('');
         setChassis('');
         setAesthetics('');

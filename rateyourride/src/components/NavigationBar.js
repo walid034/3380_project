@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useUser } from './UserContext'; // Import the useUser hook
+import { useUser } from './UserContext'; 
 
 const NavigationBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
-  const { loggedInUser, setLoggedInUser } = useUser(); // Use the useUser hook
+  const { loggedInUser, setLoggedInUser } = useUser(); 
 
   const handleSearch = () => {
     navigate(`/search/${searchTerm}`);

@@ -6,7 +6,7 @@ import SignUpForm from './SignUpForm';
 import CarDetails from './CarDetails';
 import SearchResults from './SearchResults';
 import LoginForm from './LoginForm';
-import { UserProvider } from './UserContext'; // Import the UserProvider
+import { UserProvider } from './UserContext'; 
 
 function App() {
   return (
