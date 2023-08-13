@@ -37,13 +37,13 @@ const CarDetails = () => {
       .then(response => {
         const avgRatings = response.data[0] || {}; // Use an empty object if the response is empty
         setAverageRatings({
-          Engine: avgRatings.Engine || 0,
-          Chassis: avgRatings.Chassis || 0,
-          Aesthetics: avgRatings.Aesthetics || 0,
-          Comfort: avgRatings.Comfort || 0,
-          'Fuel Efficiency': avgRatings['Fuel Efficiency'] || 0,
-          Reliability: avgRatings.Reliability || 0,
-          Overall: avgRatings.Overall || 0,
+          Engine: Number(avgRatings.Engine).toFixed(2) || 0,
+          Chassis: Number(avgRatings.Chassis).toFixed(2) || 0,
+          Aesthetics: Number(avgRatings.Aesthetics).toFixed(2) || 0,
+          Comfort: Number(avgRatings.Comfort).toFixed(2) || 0,
+          'Fuel Efficiency': Number(avgRatings['Fuel Efficiency']).toFixed(2) || 0,
+          Reliability: Number(avgRatings.Reliability).toFixed(2) || 0,
+          Overall: Number(avgRatings.Overall).toFixed(2) || 0,
         });
       })
       .catch(error => {
@@ -76,6 +76,7 @@ const CarDetails = () => {
         style={{ width: 950, height: 600 }}
       />
       <h2>{`${make} ${model} ${year}`}</h2>
+      <div className="info-section">
       <div className="car-specs">
         <h3>Specifications:</h3>
         <ul>
@@ -99,6 +100,7 @@ const CarDetails = () => {
           <li>Reliability: {averageRatings.Reliability || 0}</li>
           <li>Overall: {averageRatings.Overall || 0}</li>
         </ul>
+      </div>
       </div>
       <div className="user-reviews">
         <h3>User Reviews:</h3>

@@ -1,4 +1,8 @@
-/* NavigationBar.css */
+body {
+  font-family: "Optima", sans-serif;
+}
+
+
 .navbar-container {
   display: flex;
   align-items: center;
@@ -9,8 +13,8 @@
 }
 
 .app-name {
-  color: yellow; /* Set the text color to yellow */
-  text-decoration: none; /* Remove underline */
+  color: yellow;
+  text-decoration: none; 
   font-size: 24px;
   font-weight: bold;
 }
@@ -45,6 +49,7 @@
   padding: 5px 10px;
   cursor: pointer;
   text-decoration: none;
+  margin: 5px;
 }
 
 .login-signup a {
@@ -154,3 +159,154 @@
   background-color: #ffecc0;
 }
 
+
+/* PostReview.css */
+
+.post-review {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.post-review h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.post-review form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.post-review p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.post-review input,
+.post-review textarea {
+  padding: 10px;
+  margin: 0 10px 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.post-review input[type="number"],
+.post-review input[type="text"] {
+  width: 48%; /* Adjust the width as needed */
+}
+
+.post-review textarea {
+  width: 100%; /* Set the textarea to full width */
+  height: 100px;
+  resize: vertical;
+}
+
+.post-review button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 15px auto 0;
+  display: block;
+}
+
+.post-review button:hover {
+  background-color: #0056b3;
+}
+
+
+/* CarDetails.css */
+
+.car-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.car-details img {
+  width: 100%;
+  max-width: 950px;
+  max-height: 600px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.car-details h2 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.info-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.car-specs,
+.average-ratings {
+  flex: 1;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.car-specs h3,
+.average-ratings h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.car-specs ul,
+.average-ratings ul {
+  list-style: none;
+  padding: 0;
+}
+
+.car-specs li,
+.average-ratings li {
+  margin-bottom: 5px;
+}
+
+.user-reviews {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.user-reviews ul {
+  width: 100%;
+  padding: 0;
+}
+
+.user-reviews li {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-reviews strong {
+  font-weight: bold;
+}
+
+.user-reviews p {
+  margin: 0;
+}

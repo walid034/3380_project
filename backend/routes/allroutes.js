@@ -173,12 +173,11 @@ router.route("/addreview").post((req, res) => {
     newReview
       .save()
       .then(() => res.json("Review added!"))
+      .catch((err) => res.status(400).json("Error: " + err));
     
   } catch (error) {
     res.status(400).json("Error: " + error);
   }
-
-
 });
 
 

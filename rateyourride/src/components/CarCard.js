@@ -37,7 +37,7 @@ const CarCard = ({ make, model, year }) => {
         </div>
         <div className="car-details">
           <h3>{make} {model}</h3>
-          <p>Average Overall Rating: {averageRating}</p>
+          <p>Average Overall Rating: {Number(averageRating).toFixed(2)}</p>
         </div>
       </div>
     </Link>
